@@ -1,4 +1,4 @@
-# Project technical debt
+﻿# Project technical debt
 
 Entries about one library or component are in [debt](debt/), one file per library or component, under the same sections as this page. Entries that belong to none stay here.
 
