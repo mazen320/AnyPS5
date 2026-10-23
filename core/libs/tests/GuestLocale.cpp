@@ -47,6 +47,7 @@ std::size_t APS5_VABI _ZNSt8numpunctIcE7_GetcatEPPKNSt6locale5facetEPKS1__nid_po
 std::size_t APS5_VABI _ZNSt7num_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5__nid_postfix(GuestLocale::Facet** facet, const GuestLocale::Implementation* const* locale);
 std::size_t APS5_VABI _ZNSt8time_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE7_GetcatEPPKNSt6locale5facetEPKS5__nid_postfix(GuestLocale::Facet** facet, const GuestLocale::Implementation* const* locale);
 extern std::uintptr_t _ZTVSt7collateIcE_nid_postfix[9];
+extern std::uintptr_t _ZTVSt8numpunctIcE_nid_postfix[11];
 
 }
 
@@ -97,6 +98,8 @@ static void CheckCodecvtWideVtableObject() {
 
 static void CheckCollateVtableObject() {
     for (std::uintptr_t& slot : _ZTVSt7collateIcE_nid_postfix) {
+static void CheckNumpunctVtableObject() {
+    for (std::uintptr_t& slot : _ZTVSt8numpunctIcE_nid_postfix) {
         Require(slot == 0);
         slot = 0x1111;
         Require(slot == 0x1111);
@@ -368,6 +371,7 @@ int main() {
     CheckWideNumPutVtableObject();
     CheckFacetGetcat();
     CheckCollateVtableObject();
+    CheckNumpunctVtableObject();
     _Locksyslock_nid_postfix();
     _Locksyslock_nid_postfix();
     _Unlocksyslock_nid_postfix();
